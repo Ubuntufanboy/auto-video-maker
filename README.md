@@ -17,6 +17,13 @@ chmod +x main1.sh main2.sh combine.sh
 sudo apt install ffmpeg
 sudo apt install yt-dlp
 ```
+
+Install `termcolor`
+
+```python3
+pip3 install termcolor
+```
+
 > At this stage it's recommended to set up a `venv` for python.
 
 Install `oauth2client`.
