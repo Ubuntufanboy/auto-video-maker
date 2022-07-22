@@ -20,7 +20,6 @@ if sec == "y":
     stats = "public"
 else:
     stats = "private"
-# python3 upload_video.py --file="/home/apollo/没有人能救我.mp4" --title="e" --description="e" --keywords="" --category="22" --privacyStatus="private"
 
 command = f"python3 upload_video.py --file=\"{path}\" --title=\"{title}\" --description=\"{des}\" --keywords=\"{tags}\" --category \"22\" --privacyStatus=\"{stats}\""
 print(command)
