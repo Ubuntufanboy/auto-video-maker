@@ -13,7 +13,7 @@ sudo apt update && sudo apt upgrade
 sudo apt install git
 git clone https://github.com/Ubuntufanboy/auto-video-maker.git
 cd auto-video-maker/
-chmod +x main1.sh main2.sh combine.sh
+chmod +x main.sh combine.sh
 sudo apt install ffmpeg
 sudo apt install yt-dlp
 ```
@@ -22,6 +22,12 @@ Install `termcolor`
 
 ```python3
 pip3 install termcolor
+```
+
+Install `pedalboard`
+
+```python3
+pip3 install pedalboard
 ```
 
 > At this stage it's recommended to set up a `venv` for python.
@@ -120,7 +126,7 @@ ffmpeg -i [[what ever the file name is with the file extention]] img.jpg
 After that, run these commands and follow the instructions given to you.
 
 ```bash
-./main1.sh
+./main.sh
 ```
 
 Once, the program is finished. Check for a file with YouTube video name and extension `opus`.
@@ -130,7 +136,7 @@ ffmpeg [[what ever the file is called with the file extension]] -i input.mp3
 ```
 
 ```bash
-./main2.sh
+python3 editor.py
 ```
 
 > If you did not want to upload the video to youtube follow the next step otherwise you are finished. When the program asks for a video path press *Ctrl + C* in the terminal window and you are done.
