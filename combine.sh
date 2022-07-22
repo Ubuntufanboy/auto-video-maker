@@ -1,0 +1,1 @@
+ffmpeg -loop 1 -i img.jpg -i output.mp3 -shortest -acodec copy -vcodec mjpeg video.mp4
