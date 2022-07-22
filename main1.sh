@@ -1,4 +1,8 @@
 echo '----- Welcome to the auto-video-maker script! -----'
 python3 yt-download.py
-echo 'Go turn  the .opus file into an mp3 file with ffmpeg then run main2.sh'
-echo 'run ffmpeg [[filename.opus]] -i input.mp3'
+echo ''
+echo ''
+echo '----- INSTRUCTIONS -----'
+echo ''
+echo 'run ffmpeg -i [[filename.opus]] input.mp3'
+echo 'then run python3 editor.py'
