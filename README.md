@@ -30,6 +30,11 @@ Install `pedalboard`
 pip3 install pedalboard
 ```
 
+Install `mpv`
+```bash
+sudo apt install mpv
+```
+
 You will also need to install Silver.
 ```bash
 git clone https://github.com/Ubuntufanboy/Silver
