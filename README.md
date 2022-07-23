@@ -30,6 +30,13 @@ Install `pedalboard`
 pip3 install pedalboard
 ```
 
+You will also need to install Silver.
+```bash
+git clone https://github.com/Ubuntufanboy/Silver
+```
+Then move silver.py into the auto-video-maker folder
+
+
 > At this stage it's recommended to set up a `venv` for python.
 
 Install `oauth2client`.
