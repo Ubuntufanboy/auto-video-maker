@@ -1,12 +1,38 @@
-from pedalboard import Chorus, Distortion, Phaser, Gain, Reverb, Pedalboard
+from os import system
+from configparser import ConfigParser
+config = ConfigParser()
+try:
+    config.read('settings.ini')
+    download_bool = config.get('USER', 'edit_audio')
+except:
+    print("Hey! looks like you don't have the file settings.ini! Using default settings!...")
+    download_bool = "ASK"
+
+if download_bool == "TRUE":
+    pass
+
+elif download_bool == "ASK":
+    print("Do you want to edit the audio of the video? y/n ")
+    skip = input(">>> ")
+    if skip == "n":
+        system("bash ./combine.sh")        
+    else:
+        pass
+
+elif download_bool == "FALSE":
+    system("bash ./combine.sh")
+
+else:
+    print("ERROR: Incorrect input! value must be \"TRUE\", \"ASK\", or \"FALSE\"")
+
+#Start program
+from pedalboard import Chorus, Distortion, Phaser, Gain, Reverb, PitchShift, Pedalboard
 from pedalboard.io import AudioFile
 from termcolor import cprint
-from os import system
 from silver import Silver
+system("ffmpeg -i input.mp3 audio.wav -hide_banner -loglevel error")
 cprint("----- Welcome to Audio editor! -----", "green")
 print("")
-file = input("Editor: Enter an audio file you would like to edit! >>> ")
-system(f"ffmpeg -i {file} audio.wav")
 
 with AudioFile('audio.wav', 'r') as f:
     audio = f.read(f.frames)
@@ -174,31 +200,46 @@ while 1:
         break
     else:
         continue
+while 1:
+    pitch = input("Would you like to add the Pitch Shift effect? y/n ")
+    if pitch == "y":
+        semis = int(input("How many semitones would you like to shift the audio by"))
+        pi = PitchShift(semis)
+        board.append(pi)
+        print("Playing demo audio...")
+        effected = board(audio, samplerate)
+        with AudioFile('demo6.wav', 'w', samplerate, effected.shape[0]) as f:
+            f.write(effected)
+        Silver.play("demo6.wav")
+        remove = input("Did you change your mind? We can remove it if you wish y/n ")
+        if remove == "y":
+            board.remove(pi)
+            Silver.stop()
+            effected = board(audio, samplerate)
+            with AudioFile('demo6.wav', 'w', samplerate, effected.shape[0]) as f:
+                f.write(effected)
+            print("This is what it sounds like now")
+            Silver.play("demo6.wav")
+            input("Press enter to stop the playback")
+            Silver.stop()
+        else:
+            Silver.stop()
+            break
+        break
+    elif pitch == "n":
+        break
+    else:
+        continue
 print("")
 print("")
-print("This is the end of the main effects. If you wish, you can go into the pitch shifting program")
-print("The pitch shifting program is lower quality but it will still work.")
-print("If you want to go into that program enter \"y\" if you don't want to enter the pitch shift program enter \"n\"")
-exit_ = input(">>> ")
-if exit_ == "y":
-    print("Exporting audio")
-    system("ffmpeg -i demo5.wav input.mp3")
-    print("Removing old demo files...")
-    system("rm demo1.wav")
-    system("rm demo2.wav")
-    system("rm demo3.wav")
-    system("rm demo4.wav")
-    system("rm demo5.wav")
-    print("exiting...")
-    system("python3 pitch.py")
-elif exit_ == "n":
-    print("Exporting audio...")
-    system("ffmpeg -i demo5.wav output.mp3")
-    print("removing old demo files...")
-    system("rm demo1.wav")
-    system("rm demo2.wav")
-    system("rm demo3.wav")
-    system("rm demo4.wav")
-    system("rm demo5.wav")
-    print("exiting...")
-    system("./combine.sh")
+print("Exporting audio...")
+system("ffmpeg -i demo6.wav output.mp3 -hide_banner -loglevel error")
+print("removing old demo files...")
+system("rm demo1.wav")
+system("rm demo2.wav")
+system("rm demo3.wav")
+system("rm demo4.wav")
+system("rm demo5.wav")
+system("rm demo 6.wav")
+print("exiting...")
+system("bash ./combine.sh")
