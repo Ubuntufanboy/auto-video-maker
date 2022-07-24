@@ -1,6 +1,6 @@
 # auto-video-maker
 
-This app takes audio from a video off of youtube and uses an image to make a video that can upload to `youtube`.
+This app takes audio from a video off of YouTube and uses an image to make a video that can upload to `youtube`.
 
 ## Installation
 
