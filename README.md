@@ -102,8 +102,6 @@ ffmpeg [[what ever the file is called with the file extension]] -i input.mp3
 python3 editor.py
 ```
 
-> If you did not want to upload the video to youtube follow the next step otherwise you are finished. When the program asks for a video path press *Ctrl + C* in the terminal window and you are done.
-
 ## Support
 
 You can support this project by starring it and following me on GitHub.
