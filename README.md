@@ -1,6 +1,6 @@
 # auto-video-maker
 
-This app takes audio from a video off of youtube and uses an image to make a video that can upload to `youtube`.
+This app takes audio from a video off of YouTube and uses an image to make a video that can upload to `youtube`.
 
 ## Installation
 
@@ -13,45 +13,11 @@ sudo apt update && sudo apt upgrade
 sudo apt install git
 git clone https://github.com/Ubuntufanboy/auto-video-maker.git
 cd auto-video-maker/
-chmod +x main.sh combine.sh
-sudo apt install ffmpeg
-sudo apt install yt-dlp
-```
-
-Install `termcolor`
-
-```python3
-pip3 install termcolor
-```
-
-Install `pedalboard`
-
-```python3
-pip3 install pedalboard
-```
-
-Install `mpv`
-```bash
-sudo apt install mpv
-```
-
-You will also need to install Silver.
-```bash
-git clone https://github.com/Ubuntufanboy/Silver
-```
-Then move silver.py into the auto-video-maker folder
-
-
-> At this stage it's recommended to set up a `venv` for python.
-
-Install `oauth2client`.
-
-```python3
-pip3 install oauth2client
+chmod +x install.sh
+./install.sh
 ```
 
 Congrats! You have no installed all of the tools needed to run this program!
-
 
 ## Setting up YouTube API
 
@@ -103,31 +69,16 @@ pip3 install --upgrade google-api-python-client
 pip3 install --upgrade google-auth-oauthlib google-auth-httplib2
 ```
 
-21. Open/Create `client_secrets.json`.
+21. Open `client_secrets.json`.
 
-22. Paste the following code:
+22. Then replace *"[[ENTER CLIENT ID HERE]]"* with your actual Client ID that you wrote down (Make sure you keep the quotes there).
 
-```json
-{
-  "web": {
-    "client_id": "[[ENTER CLIENT ID HERE]]",
-    "client_secret": "[[ENTER CLIENT SECRET HERE]]",
-    "redirect_uris": [],
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://accounts.google.com/o/oauth2/token"
-  }
-}
-```
-
-23. Then replace *"[[ENTER CLIENT ID HERE]]"* with your actual Client ID that you wrote down (Make sure you keep the quotes there).
-
-24. Do the same for *"[[ENTER CLIENT SECRET HERE]]"* (Make sure you keep the quotes there).
+23. Do the same for *"[[ENTER CLIENT SECRET HERE]]"* (Make sure you keep the quotes there).
 
 
 ## Usage
 
 Make sure the image you want to use is downloaded into the auto-video-maker folder and is named ``img.jpg``.
-
 
 If the file is NOT a jpg do as given below:
 
