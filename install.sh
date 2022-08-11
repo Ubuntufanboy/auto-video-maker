@@ -21,6 +21,8 @@ echo "Installing pedalboard..."
 pip3 install pedalboard
 echo "Installing oauth2client..."
 pip3 install oauth2client
+echo "Installing moviepy"
+pip3 install moviepy
 echo "Installing silver..."
 wget https://raw.githubusercontent.com/Ubuntufanboy/Silver/main/silver.py
 
