@@ -1,5 +1,7 @@
 # auto-video-maker
 
+## This is outdated! Check out Dolphin for an updated version
+
 This app takes audio from a video off of YouTube and uses an image to make a video that can upload to `youtube`.
 
 ## Installation
