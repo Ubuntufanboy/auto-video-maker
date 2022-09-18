@@ -1,6 +1,8 @@
 # auto-video-maker
 
-## This is outdated! Check out Dolphin for an updated version
+## Notice
+
+This version is deprecated, the newer version is [Dolphin](https://github.com/Ubuntufanboy/Dolphin).
 
 This app takes audio from a video off of YouTube and uses an image to make a video that can upload to `youtube`.
 
